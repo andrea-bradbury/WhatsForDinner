@@ -28,19 +28,18 @@ def getAllRecipes():
         # Exception handling to handle unexpected changes
         # in the structure of the website
         try:
-
             recipe_path = f'//*[@id="slide-{x}"]/div[3]/div[1]'
             # to get that element
             recipe = driver.find_element_by_xpath(recipe_path)
             all_recipes.append(recipe.text)
         except:
             continue
-        #print(all_recipes)
+        print(all_recipes)
 
 def getWeeklyRecipes():
     weekly_recipes = []
     for y in range(0, 7):
-        weekly_recipes.append(all_recipes[random.randint(1,20)])
+        weekly_recipes.append(all_recipes[random.randint(1, 25)])
         days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
         print(f"On {days[y]} let's eat: ")
